@@ -10,7 +10,7 @@ class Food(metaclass=ABCMeta):
         it is abstract, because we want to prohibit to make classes of food
         without recipe
         """
-        return {'l': {'cheese': 100}, 'xl': {'cheese': 200}}
+        return {'l': {'x': 1}, 'xl': {'x': 1}}
 
     @property
     @abstractmethod
@@ -18,7 +18,7 @@ class Food(metaclass=ABCMeta):
         """
         food icon in cli
         """
-        return "smile"
+        return 'smile'
 
     @classmethod
     def get_name(cls) -> str:
@@ -31,7 +31,7 @@ class Food(metaclass=ABCMeta):
 
     @classmethod
     def to_str(cls) -> str:
-        return f"{cls.get_name()} {cls.icon}"
+        return f'{cls.get_name()} {cls.icon}'
 
     @classmethod
     def ingredients(cls) -> list:

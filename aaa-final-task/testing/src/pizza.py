@@ -6,9 +6,9 @@ from src.helper_funcs import Logging
 from src.food import Food
 
 loggers = {
-    "bake": Logging("Your pizza is 🔥baked🔥 in {}s"),
-    "delivery": Logging("Your pizza is 🏃delivered🏃 in {}s"),
-    "pickup": Logging("Your 🍕pizza🍕 is served in {}s"),
+    'bake': Logging('Your pizza is 🔥baked🔥 in {}s'),
+    'delivery': Logging('Your pizza is 🏃delivered🏃 in {}s'),
+    'pickup': Logging('Your 🍕pizza🍕 is served in {}s'),
 }
 
 
@@ -19,11 +19,11 @@ class Pizza(Food, metaclass=ABCMeta):
     abstract pizza class
     """
 
-    sizes: list[str] = ["XL", "L"]
+    sizes: list[str] = ['XL', 'L']
 
     def __init__(self, size: str):
         if size not in self.sizes:
-            raise ValueError(f"There are no {size} size.")
+            raise ValueError(f'There are no {size} size.')
             # raises error if somebody trying to
             # create pizza with not implemented size
         self.size = size
@@ -77,10 +77,10 @@ class Pizza(Food, metaclass=ABCMeta):
 
 
 class Margherita(Pizza):
-    icon: str = "🧀"
+    icon: str = '🧀'
     recipes_dict = {
-        "XL": {"tomato sauce": 100, "mozzarella": 100, "tomatoes": 100},
-        "L": {"tomato sauce": 100, "mozzarella": 200, "tomatoes": 100},
+        'XL': {'tomato sauce': 100, 'mozzarella': 100, 'tomatoes': 100},
+        'L': {'tomato sauce': 100, 'mozzarella': 200, 'tomatoes': 100},
     }
 
     def bake(self) -> None:
@@ -89,10 +89,10 @@ class Margherita(Pizza):
 
 
 class Pepperoni(Pizza):
-    icon: str = "🍕"
+    icon: str = '🍕'
     recipes_dict = {
-        "XL": {"tomato sauce": 100, "mozzarella": 200, "pepperoni": 100},
-        "L": {"tomato sauce": 100, "mozzarella": 100, "pepperoni": 100},
+        'XL': {'tomato sauce': 100, 'mozzarella': 200, 'pepperoni': 100},
+        'L': {'tomato sauce': 100, 'mozzarella': 100, 'pepperoni': 100},
     }
 
     def bake(self) -> None:
@@ -101,19 +101,19 @@ class Pepperoni(Pizza):
 
 
 class Hawaiian(Pizza):
-    icon: str = "🍍"
+    icon: str = '🍍'
     recipes_dict = {
-        "XL": {
-            "tomato sauce": 100,
-            "mozzarella": 100,
-            "chicken": 100,
-            "pineapples": 100,
+        'XL': {
+            'tomato sauce': 100,
+            'mozzarella': 100,
+            'chicken': 100,
+            'pineapples': 100,
         },
-        "L": {
-            "tomato sauce": 100,
-            "mozzarella": 50,
-            "chicken": 100,
-            "pineapples": 100,
+        'L': {
+            'tomato sauce': 100,
+            'mozzarella': 50,
+            'chicken': 100,
+            'pineapples': 100,
         },
     }
 
@@ -122,7 +122,8 @@ class Hawaiian(Pizza):
         sleep(baking_time[self.get_name()][self.size])
 
 
-menu = MenuObject(menu_text="PIZZA MENU",
+menu = MenuObject(menu_text='PIZZA MENU',
                   menu_width=80,
                   module_name=__name__,
                   food_base_class=Pizza)
+

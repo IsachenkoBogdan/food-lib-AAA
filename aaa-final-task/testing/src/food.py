@@ -4,13 +4,13 @@ from abc import ABCMeta, abstractmethod
 class Food(metaclass=ABCMeta):
     @property
     @abstractmethod
-    def recipes_dict(self) -> dict[str: dict]:
+    def recipes_dict(self) -> dict[str, dict[str, int]]:
         """
         returns a dictionary from ingredients to recipe quantities with sizes
         it is abstract, because we want to prohibit to make classes of food
         without recipe
         """
-        return {"l": {}, 'xl': {}}
+        return {'l': {'x': 1}, 'xl': {'x': 1}}
 
     @property
     @abstractmethod
@@ -18,7 +18,7 @@ class Food(metaclass=ABCMeta):
         """
         food icon in cli
         """
-        return "smile"
+        return 'smile'
 
     @classmethod
     def get_name(cls) -> str:
@@ -31,7 +31,7 @@ class Food(metaclass=ABCMeta):
 
     @classmethod
     def to_str(cls) -> str:
-        return f"{cls.get_name()} {cls.icon}"
+        return f'{cls.get_name()} {cls.icon}'
 
     @classmethod
     def ingredients(cls) -> list:

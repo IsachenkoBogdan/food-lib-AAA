@@ -48,9 +48,9 @@ class MenuObject:
         """
         method for printing menu
         """
-        text = self.bound_text.center(self.bound_width, "-") + "\n"
+        text = self.bound_text.center(self.bound_width, '-') + '\n'
         for pos in self.list_menu:
-            addition = f"- {pos.to_str()}: " + ", ".join(pos.ingredients())
+            addition = f'- {pos.to_str()}: ' + ', '.join(pos.ingredients())
             addition = addition.ljust(self.bound_width)
-            text += addition + "✅\n"
+            text += addition + '✅\n'
         return text + text[: self.bound_width]
